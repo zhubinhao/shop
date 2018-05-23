@@ -1,2 +1,5 @@
-<!--pages/classify/classify.wxml-->
-<text>pages/classify/classify.wxml</text>
+<view class='left'>
+   <view wx:for='{{leftArr}}' class='{{index==i?"active":""}}' bindtap='click' data-index='{{index}}'>{{item}}</view>
+  
+   
+</view>

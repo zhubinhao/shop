@@ -1,1 +1,22 @@
 /* pages/classify/classify.wxss */
+.left{
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 80px;
+  height: 100%;
+  background-color: white;
+  border-right: 1px solid #F0F0F0;
+
+}
+.left view{
+  width: 80px;
+  height: 40px;
+  border-bottom: 1px solid #F0F0F0;
+  text-align: center;
+  line-height: 40px;
+}
+.active{
+  color: red;
+  background-color: #F0F0F0;
+}

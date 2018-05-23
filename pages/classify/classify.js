@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    i:1,
+    leftArr:['a','b','c','d','e','f',]
   },
 
   /**
@@ -21,7 +22,13 @@ Page({
   onReady: function () {
   
   },
-
+  click:function(r){
+    this.setData({
+      i: r.currentTarget.dataset.index
+    })
+    console.log(r.currentTarget.dataset.index)
+    
+  },
   /**
    * 生命周期函数--监听页面显示
    */
