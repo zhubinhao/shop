@@ -4,7 +4,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    innerData: {
+      type: Array,
+      value: [],
+    },
+    innerUrl:{
+      type: String,
+      value: '',
+    }
   },
 
   /**

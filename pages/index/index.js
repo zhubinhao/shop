@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const serve = require('../../utils/serve.js')
 
 Page({
   data: {
@@ -11,9 +12,19 @@ Page({
     ],
     indicatorDots: false,
     interval: 3000,
-    duration: 1000
+    duration: 1000,
+    list:[],
+    URLS:''
   },
   onLoad: function () {
-    
+    let that =this;
+    console.log(serve.URLS)
+    serve.get('/good/hot',{page:1},res=>{
+      console.log(res)
+      that.setData({
+        list: res.list,
+        URLS: serve.URLS
+      })
+    })
   },
 })

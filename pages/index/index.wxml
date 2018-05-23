@@ -16,6 +16,6 @@
   </view>
  </view>
  <view>
-  <List></List>
+  <List inner-data='{{list}}' inner-url='{{URLS}}'></List>
  </view>
 </view>

@@ -1,26 +1,13 @@
 <!--pages/component/list.wxml-->
-<view class='list'>
+<view class='list' wx:for="{{innerData}}">
 <view class="inner" bindtap='to'>
-  <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+  <image src='{{innerUrl}}{{item.img}}'></image>
   <view class='content'>
-    太平鸟男装短袖T恤男夏季纯色打底衫
-    太平鸟男装短袖T恤男夏季纯色打底衫
+    {{item.name}}
   </view>
   <view class='footer'>
-    <text>￥13.9</text>
-    <text>3000人已付款</text>
-  </view>
-</view>
-
-<view class="inner">
-  <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
-  <view class='content'>
-    太平鸟男装短袖T恤男夏季纯色打底衫
-    太平鸟男装短袖T恤男夏季纯色打底衫
-  </view>
-  <view class='footer'>
-    <text>￥13.9</text>
-    <text>3000人已付款</text>
+    <text>￥{{item.price}}</text>
+    <text>{{item.goodPraise}}人已付款</text>
   </view>
 </view>
 </view>
