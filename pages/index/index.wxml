@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view >
+<!-- 轮播图 -->
+ <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{true}}" indicator-dots="{{true}}" circular="{{true}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" >
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+ </swiper>
+ <view class='cent'>
+  <view wx:for="1111">
+    <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+    <text>text1</text>
+  </view>
+ </view>
+ <view>
+  <List></List>
+ </view>
+</view>

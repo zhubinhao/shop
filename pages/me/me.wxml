@@ -1,0 +1,36 @@
+
+  <view class='user-head'>
+    <text>{{name}}</text>
+      <image src='{{hedaimg}}' />  
+  </view>
+  <view class='user-dingdan'>
+      <view>
+         <text>我的订单</text>
+         <view bindtap='goto' data-i='0'>
+            <text style='margin-right:20px;color:gray'>查看全部 </text>
+            <image class=' top1' src='../../image/返回.png' style=' width: 10px;height: 10px ;'/>
+         </view>      
+      </view>
+      <view>
+        <view wx:for='{{imgs}}'wx:key='index' class='user-imgs' bindtap='goto' data-i='{{item.i}}'>
+           <image  src='{{item.img}}'/>
+           <text>{{item.text}}</text>
+        </view>
+      </view>
+      
+  </view>
+
+  <view class='user-list'>
+    <view bindtap='next' data-to='goods'>
+        <text>收货地址</text>
+        <image src='../../image/返回.png' class=' top'/>
+    </view>
+     <view bindtap='next' data-to='help'>
+        <text>帮助中心</text>
+        <image src='../../image/返回.png' class=' top'/>
+    </view>    
+    <view bindtap='next' data-to='feed'>
+        <text>问题反馈</text>
+        <image src='../../image/返回.png' class=' top'/>
+    </view> 
+  </view>
