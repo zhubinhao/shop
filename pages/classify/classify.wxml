@@ -1,5 +1,16 @@
 <view class='left'>
    <view wx:for='{{leftArr}}' class='{{index==i?"active":""}}' bindtap='click' data-index='{{index}}'>{{item}}</view>
-  
+</view>
+<view class='right'>
+
+<image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg' class='head'></image>
+<view class='content'>
+   <view>
+     <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg' class='cont-img'></image>
    
+    text1
+   </view>
+  
+</view>
+ 
 </view>

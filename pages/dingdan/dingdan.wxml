@@ -1,2 +1,51 @@
 <!--pages/dingdan/dingdan.wxml-->
-<text>pages/dingdan/dingdan.wxml</text>
+  <import src="../component/w.wxml" />  
+<view class='dingdan-top'>
+ <view wx:for='{{datas}}' wx:key="index" class='{{index==i?"active":""}}' bindtap='toogle' data-i='{{index}}'>{{item}}</view>
+
+</view>
+
+<view style='height:30px'></view>
+<swiper current='{{i}}' bindchange='change' circular='true'style="height:{{h}};" duration='110'>
+  <swiper-item  wx:for='{{dataJson}}' wx:key='index' >
+   <scroll-view scroll-y='{{true}}'style='height:{{h}}'>
+      <block wx:for='{{item}}' wx:key='index'>
+       
+        <view class='MB-box'  >
+          <view>
+              <text>订单号： {{item.DD}}</text>
+              <text class='tk'>已退款</text>
+          </view>
+          <view>
+              <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'/>
+              <view class='two'>
+                  <view class='three'>
+                  官方发布公告称之前提供             
+                  </view>
+                  <view >
+                      <text>￥4.68</text>
+                      <text>X1</text>
+              
+                  </view>
+              </view>
+              
+          </view>
+          <view>
+            <text>共一件商品 实付款 ￥4.68</text>
+          </view>
+        </view>
+     
+      
+     
+      </block>
+      <view wx:if='{{istrue}}'>
+        <view wx:if='{{item==""}}'>
+            <template is="w1" ></template>
+          
+        </view>
+      </view>
+       
+    </scroll-view>
+  </swiper-item>
+  
+</swiper>

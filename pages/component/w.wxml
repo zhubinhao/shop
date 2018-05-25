@@ -1,0 +1,13 @@
+<template name="w1">
+    <view class='w-box'>
+    <view>
+       <image src='../image/w.png' class='w'/>
+    
+    </view>
+    <view>
+      <text >暂无订单消息</text>  
+    
+    </view>
+    
+    </view>
+</template>  

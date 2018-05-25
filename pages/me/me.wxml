@@ -28,7 +28,11 @@
      <view bindtap='next' data-to='help'>
         <text>帮助中心</text>
         <image src='../../image/返回.png' class=' top'/>
-    </view>    
+    </view>  
+    <view bindtap='next' data-to='arter'>
+        <text>售后</text>
+        <image src='../../image/返回.png' class=' top'/>
+    </view>   
     <view bindtap='next' data-to='feed'>
         <text>问题反馈</text>
         <image src='../../image/返回.png' class=' top'/>

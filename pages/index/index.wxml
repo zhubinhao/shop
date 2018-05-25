@@ -15,7 +15,8 @@
     <text>text1</text>
   </view>
  </view>
- <view>
+ <view class='re'>
+ <view class='title'>热门推荐</view>
   <List inner-data='{{list}}' inner-url='{{URLS}}'></List>
  </view>
 </view>

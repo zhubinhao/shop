@@ -1,0 +1,6 @@
+<template name='zw1'>
+  <view class='zw-box'>
+    <image src='../image/zw.png'></image>
+    <text>{{name}}</text>
+  </view>
+</template>

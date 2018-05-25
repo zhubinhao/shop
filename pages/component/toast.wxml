@@ -1,0 +1,5 @@
+<template name="toast1">
+    <view class='toast'>
+      <text >{{title}}</text>
+    </view>
+</template>  

@@ -7,4 +7,6 @@ Page {
   overflow-x: hidden;
   overflow-y: auto;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }

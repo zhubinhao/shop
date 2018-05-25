@@ -1,20 +1,11 @@
-// pages/shopxq/shopxq.js
+// pages/help/help.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
-    indicatorDots: false,
-    interval: 3000,
-    duration: 1000,
-    list: [],
-    URLS: ''
+  
   },
 
   /**
@@ -36,16 +27,6 @@ Page({
    */
   onShow: function () {
   
-  },
-  gou:function(){
-    wx.switchTab({
-      title: '已加入购物车',
-    })
-  },
-  to:function(){
-    wx.reLaunch({
-      url: '../cart/cart',
-    })
   },
 
   /**

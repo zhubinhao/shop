@@ -4,11 +4,11 @@
   border-bottom: 1px solid lightgray
 }
 .list .inner:nth-child(n+1){
-  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
   border-right: 1px solid lightgray
 }
 .list .inner:nth-child(n+2){
-  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 .inner{
   width: 50%;

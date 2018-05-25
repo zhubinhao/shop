@@ -1,0 +1,16 @@
+
+.w-box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+   justify-content: center; 
+  align-items: center;
+  height: 600rpx;
+  color: gray;
+}
+.w{
+  width: 80px;
+  height: 80px;
+   margin-bottom: 40rpx; 
+  margin-left: -6px;
+}

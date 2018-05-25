@@ -27,3 +27,12 @@ image{
   border-radius: 50%;
   margin-bottom: 5px;
 }
+.re{
+  background-color: white;
+}
+.title{
+  height: 30px;
+  line-height: 30px;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}

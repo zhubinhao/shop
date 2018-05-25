@@ -1,0 +1,89 @@
+<view>
+<radio-group class="radio-group" bindchange="radioChange">
+    <view class='goods-itm' wx:for='{{address}}' wx:key='index'>
+       <view>
+          <text>{{item.name}}</text>
+          <text>{{item.phone}}</text>
+       </view>
+       <view>
+           <text>{{item.cont}}</text>
+       </view>
+       <view>
+           <view>
+              
+              <label class="radio">
+                <radio value="{{index}}" checked="" color='red'/>设为默认地址
+              </label>
+           </view>
+           <view class='good-btn'>
+                <view bindtap='goodchuli' data-num='{{index}}'data-type='B'>编辑</view>
+                <view bindtap='goodchuli' data-num='{{index}}'data-type='D'>删除</view>            
+           </view>
+       </view>
+    </view>
+
+     
+
+    </radio-group>
+</view>
+<view class='goods-food' bindtap='choose'>
+    新增收货地址
+</view>
+
+
+
+  <view class='address' wx:if="{{istrue}}">
+  <view class='address-bg'>
+  </view>
+
+  <view class='address-box'>
+     <text class='address-text' bindtap='xx'>X</text>
+      <view class='a-title'>
+         <text>添加收货地址</text>
+      </view>
+      <view class='a-inp a-fist'>
+         <view>
+            <input type='text' placeholder='名字' bindinput='input'id='name' value='{{name}}' />        
+         </view>
+         <view>
+            <input type='number' placeholder='电话' maxlength='11' bindinput='input' id='phone' value='{{phone}}'/>      
+         </view>
+         
+      </view>
+      <view class='a-inp a-two'bindtap='xuanzhe'>
+         <view>{{sheng||'选择省份'}}</view>
+         <view>{{shi ||'选择城市'}}</view>
+         <view>{{xuan ||'选择地区'}}</view>        
+      </view>
+      <view class='a-inp'>
+      <input type='text' placeholder='请填写详细街道地址'  bindinput='input' id='content' value='{{content}}'/>
+      </view>
+      <view class='a-submit'>
+        <view bindtap='submits'>
+           保存
+        </view>
+      </view>
+
+
+
+
+  </view>
+
+<view class='sanji' wx:if='{{isfal}}'>
+    <view class='btn'>
+        <view bindtap='quxiao'>取消</view>
+        <view bindtap='queding'>确认</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 150px;" value="{{value}}" bindchange='a'>
+          <picker-view-column >
+            <view wx:for="{{provinces}}" wx:key='index' style="line-height: 50px" >{{item.name}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{citys}}" wx:key='index' style="line-height: 50px">{{item.name}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{countys}}" wx:key='index' style="line-height: 50px">{{item.name}}</view>
+          </picker-view-column>
+      </picker-view>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<import src='../component/toast.wxml' />
+
+
+<view class='title'>
+      问题和意见
+</view>
+<view class='box'>
+  <textarea class='textarea' maxlength='200' placeholder='请填写10个字以上的问题描述以便我们提供更好的帮助'    bindinput='changeValue' >
+  </textarea>
+  <text class='jishu'>{{num}}/200</text>
+</view>
+<view class='add'>
+   <view wx:for='{{imgs}}' wx:key='index' class='imgbox'>
+        <text bindtap='del' data-img='{{index}}'>X</text>
+        <image src='{{item}}'  />   
+   </view>
+   <image src='../image/添加.png' bindtap='addImg' wx-if='{{ingsfalse}}'/>
+   
+</view>
+
+<button class='submit' bindtap='submits'>提交</button>
+
+<template is='toast1'  data="{{title:tit}}" wx-if='{{istrue}}'></template>

@@ -1,0 +1,163 @@
+/* pages/goods/goods.wxss */
+.goods-food{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: red;
+  color: white;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 40px;
+}
+.goods-itm{
+    width: 100%;
+    background-color: white;
+    margin-bottom: 10px;
+    
+}
+.goods-itm >view:nth-child(1){
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.goods-itm >view:nth-child(2){
+  padding: 0 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed  gainsboro;
+  
+}
+.goods-itm >view:nth-child(3){
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+
+.good-btn{
+  display: flex;
+  color: gray;
+}
+.good-btn >view:first-child{
+  margin-right: 10px;
+}
+
+
+
+
+.address{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0; 
+}
+.address-bg{
+  position: absolute;  
+  width: 100%;
+  height: 100%;
+  background-color: black; 
+  opacity: 0.4;
+}
+.address-text{
+  position: absolute;
+  top:-8px;
+  font-size: 12px;
+  right: -8px;
+  z-index: 99999;
+  color: white;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  background-color: #999999; 
+}
+.address-box{  
+  position: absolute;
+  z-index: 99;
+  top: 50px;
+  left: 10%;
+  border-radius: 6px;
+  background-color: white;
+  width: 80%;
+  height: 200px;
+}
+.a-title{
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 1px solid gainsboro;
+  text-align: center;
+  color: black;
+  font-family: '微软雅黑'
+}
+.a-inp{
+  height: 35px;
+  border-bottom: 1px solid gainsboro;
+  
+}
+.a-inp input{
+  /* background-color: red; */
+  margin:0 10px;
+  height: 35px;
+  font-size: 13px;
+}
+.a-fist{
+  display: flex;
+}
+.a-fist> view:first-child{
+ border-right: 1px solid gainsboro;
+}
+.a-fist> view{
+ width: 50%
+}
+.a-two{
+  display: flex;
+
+}
+.a-two> view{
+ width: 33%;
+ line-height: 35px;
+ font-size: 13px;
+ font-weight: 100;
+ /* font-family: '新宋体' */
+}
+.a-two> view:first-child{
+ padding-left: 10px;
+}
+.a-submit >view{
+  width: 90%;
+  margin-left: 5%;
+  height: 30px;
+  border-radius: 5px;
+  background-color: red;
+  text-align: center;
+  line-height: 30px;
+  color: white;font-size: 16px;
+  font-family: '微软雅黑';
+  margin-top: 6px; 
+}
+.sanji{
+  position: absolute;
+  bottom: 0;
+  z-index: 999000000000000;
+  height: 200px;
+  width: 100%;
+  left: 0;
+  background-color: white
+}
+.sanji picker-view{
+   position: absolute;
+   bottom: 0;
+   text-align: center
+}
+.btn{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+  color: gray;
+}
+.btn view:last-child{
+  color: #51C332
+}

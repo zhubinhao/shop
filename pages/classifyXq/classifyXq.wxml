@@ -1,0 +1,6 @@
+<!--pages/classifyXq/classifyXq.wxml-->
+<view>
+  <view>价格</view>
+  <view>销量</view>
+  <view>上架时间</view>  
+</view>

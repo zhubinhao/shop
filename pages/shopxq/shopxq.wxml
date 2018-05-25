@@ -1,2 +1,28 @@
 <!--pages/shopxq/shopxq.wxml-->
-<text>pages/shopxq/shopxq.wxml</text>
+<!-- 轮播图 -->
+ <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{true}}" indicator-dots="{{true}}" circular="{{true}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" >
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+ </swiper>
+ <view class='content'>
+    <view>text1</view>
+    <text>￥1</text>
+ </view>
+ <view class='foot'>
+   <view>
+      
+      <button open-type="contact">
+        <image ></image>
+        <text>联系客服</text>
+      </button>
+   </view>
+   <view bindtap='to'>
+      <image src='../image/购物车1.png'></image>
+      <text>购物车</text>
+   </view>
+   <view bindtap='gou'>加入购物车</view>   
+ </view>

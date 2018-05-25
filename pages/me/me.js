@@ -1,3 +1,4 @@
+const app = getApp()
 Page({
 
   /**
@@ -6,7 +7,7 @@ Page({
   data: {
     name: '',
     hedaimg: '',
-    imgs: [{ 'img': '../../image/购物车.png', 'text': '待付款', 'i': 1 }, { 'img': '../../image/购物车.png', 'text': '代发货', 'i': 3 }, { 'img': '../../image/购物车.png', 'text': '已发货', 'i': 4 }, { 'img': '../../image/购物车.png', 'text': '已完成', 'i': 5 }]
+    imgs: [{ 'img': '../../image/购物车.png', 'text': '待付款', 'i': 1 }, { 'img': '../../image/购物车.png', 'text': '待发货', 'i':2 }, { 'img': '../../image/购物车.png', 'text': '已发货', 'i': 3 }, { 'img': '../../image/购物车.png', 'text': '已完成', 'i': 4 }]
     
   },
 
@@ -14,10 +15,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      name: wx.getStorageSync('nickName'),
-      hedaimg: wx.getStorageSync('avatarUrl'),
+    var that=this;
+    // 获取用户信息
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              that.setData({
+                name: JSON.parse(res.rawData).nickName,
+                hedaimg: JSON.parse(res.rawData).avatarUrl,
+              })
+
+
+            }
+          })
+        }
+      }
     })
+    
   },
 
   /**

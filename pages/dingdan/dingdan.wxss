@@ -1,1 +1,82 @@
 /* pages/dingdan/dingdan.wxss */
+@import "../component/w.wxss";
+.dingdan-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 1px solid gainsboro;
+  background-color: white;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 99;
+  height: 30px;
+}
+.dingdan-top view{
+  line-height: 30px;
+    /* padding: 12rpx 0; */
+    font-size: 13px;
+}
+.active{
+  color: red;
+  border-bottom: 1px solid red; 
+}
+.MB-box{
+  width: 96%;
+  background-color: white;
+  margin-left: 2%;
+  position: relative;
+  top: 6px;
+  box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  
+}
+.MB-box >view:first-child{
+  padding: 10px 0;
+  margin-left: 10px;
+   color: gray; 
+  display: flex;
+  font-size: 26rpx;
+  justify-content: space-between;
+}
+.MB-box >view:nth-child(2){
+   display: flex;
+   padding-bottom: 20px;
+   margin: 10px;
+   border-bottom: 1px solid gainsboro;
+}
+.MB-box >view:nth-child(3){
+    padding:0 10px 10px 10px; 
+}
+.tk{
+  color: red;
+  margin-right: 10px;
+}
+.MB-box image{
+  width: 70px;
+  height: 70px;
+  border: 1px solid gainsboro;
+
+}
+ .two{ 
+   /* background-color: red;  */
+   margin-left: 10px;
+  flex: 1;
+  height: 70px;
+  overflow-y: hidden;
+  line-height: 18px;
+  display: flex;
+  text-overflow:ellipsis;
+}
+.two >view:first-child{
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+overflow: hidden;
+}
+.two >view:last-child{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+}

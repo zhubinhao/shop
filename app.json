@@ -1,14 +1,17 @@
 {
   "pages":[
-    "pages/classify/classify",
-    
-    "pages/index/index",
-    "pages/shopxq/shopxq",    
     "pages/me/me",
+    "pages/arter/arter",
+    "pages/index/index",
+    "pages/classifyXq/classifyXq",
+    "pages/feed/feed",
+    "pages/classify/classify",
+    "pages/shopxq/shopxq",
+    "pages/goods/goods",
+    "pages/help/help",
     "pages/logs/logs",
     "pages/cart/cart",
     "pages/dingdan/dingdan"
-    
   ],
   "window":{
     "backgroundTextStyle":"dark",
