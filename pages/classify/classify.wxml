@@ -1,14 +1,14 @@
 <view class='left'>
-   <view wx:for='{{leftArr}}' class='{{index==i?"active":""}}' bindtap='click' data-index='{{index}}'>{{item}}</view>
+   <view wx:for='{{leftArr}}' wx:key='{{index}}' class='{{index==i?"active":""}}' bindtap='click' data-DAT='{{item.son}}' data-index='{{index}}'>{{item.name}}</view>
 </view>
 <view class='right'>
 
-<image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg' class='head'></image>
+<image src='{{img}}' class='head'></image>
 <view class='content'>
-   <view>
-     <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg' class='cont-img'></image>
+   <view bindtap='to' wx:for='{{son}}' wx:key='{{index}}'>
+     <image src='{{img}}' class='cont-img'></image>
    
-    text1
+     {{item.name}}
    </view>
   
 </view>

@@ -1,1 +1,31 @@
 /* pages/classifyXq/classifyXq.wxss */
+.head{
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: lightgray;
+  border-bottom: 1px solid gray;
+  
+}
+.head view{
+ flex: 1;
+ text-align: center;
+}
+.head view:nth-child(2){
+  border-right:1px solid gray;
+  border-left:1px solid gray;
+}
+.shuai{
+  position: absolute;
+  width: 100%;
+}
+.shuai view{
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  border-bottom: 1px solid gray;
+}
+.active{
+  color: red;
+  background-color: lightgray
+}

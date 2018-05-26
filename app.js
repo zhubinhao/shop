@@ -1,4 +1,5 @@
 //app.js
+const serve = require('./utils/serve.js')
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -9,7 +10,17 @@ App({
     // 登录
     wx.login({
       success: res => {
+        console.log(res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if (res.code) {
+          //发起网络请求
+          serve.post('/user/wxlogin', res.code,this,res=>{
+            console.log(res)
+          })
+       
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
       }
     })
     // 获取用户信息

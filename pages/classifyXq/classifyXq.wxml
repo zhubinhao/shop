@@ -1,6 +1,11 @@
 <!--pages/classifyXq/classifyXq.wxml-->
-<view>
-  <view>价格</view>
-  <view>销量</view>
-  <view>上架时间</view>  
+<view class='head'>
+  <view bindtap='click' data-to='1'>价格</view>
+  <view bindtap='click' data-to='2'>销量</view>
+  <view bindtap='click' data-to='3'>上架时间</view>  
+</view>
+<view class='shuai'wx:if='{{istrue}}'>
+  <view wx:for='{{dat}}'wx:key='{{index}}' data-num='{{index}}' bindtap='shuai' class='{{iaAct==index?"active":""}}'>
+    {{item}}
+  </view>
 </view>

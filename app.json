@@ -1,11 +1,12 @@
 {
   "pages":[
+    "pages/index/index",
+    
+    "pages/classifyXq/classifyXq",
+    "pages/classify/classify",
     "pages/me/me",
     "pages/arter/arter",
-    "pages/index/index",
-    "pages/classifyXq/classifyXq",
     "pages/feed/feed",
-    "pages/classify/classify",
     "pages/shopxq/shopxq",
     "pages/goods/goods",
     "pages/help/help",

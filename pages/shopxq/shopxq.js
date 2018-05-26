@@ -1,4 +1,5 @@
 // pages/shopxq/shopxq.js
+const serve = require('../../utils/serve.js')
 Page({
 
   /**
@@ -13,7 +14,7 @@ Page({
     indicatorDots: false,
     interval: 3000,
     duration: 1000,
-    list: [],
+    list: '',
     URLS: ''
   },
 
@@ -21,7 +22,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let id = options.id;
+    let that =this;
+    serve.get('/good/detail/'+id, { }, res => {
+      console.log(res)
+      that.setData({
+        list: res,
+        URLS: serve.URLS
+      })
+    })
   },
 
   /**
@@ -38,9 +47,15 @@ Page({
   
   },
   gou:function(){
-    wx.switchTab({
-      title: '已加入购物车',
+    console.log(this.data.list)
+    serve.post("/car/add", { gid: this.data.list.id, count:1},this,res=>{
+      console.log(res)
+      wx.showToast({
+        title: '已加入购物车',
+      })
     })
+    
+   
   },
   to:function(){
     wx.reLaunch({
@@ -66,13 +81,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
   
   },
 

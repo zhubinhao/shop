@@ -25,6 +25,14 @@ Page({
         list: res.list,
         URLS: serve.URLS
       })
+     
     })
+   
   },
+  to:function(r){
+    console.log(r.currentTarget.dataset.to)
+    wx.navigateTo({
+      url: '../'+r.currentTarget.dataset.to+'/'+r.currentTarget.dataset.to,
+    })
+  }
 })

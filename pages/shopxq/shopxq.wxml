@@ -1,16 +1,17 @@
 <!--pages/shopxq/shopxq.wxml-->
 <!-- 轮播图 -->
- <swiper indicator-dots="{{indicatorDots}}"
+ <!-- <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{true}}" indicator-dots="{{true}}" circular="{{true}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}" >
     <swiper-item>
       <image src="{{item}}" class="slide-image" width="355" height="150"/>
     </swiper-item>
   </block>
- </swiper>
+ </swiper> -->
+  <image src="{{URLS}}{{list.img}}" width="100%" height="150"/>
  <view class='content'>
-    <view>text1</view>
-    <text>￥1</text>
+    <view>{{list.name}}</view>
+    <text>￥{{list.price}}</text>
  </view>
  <view class='foot'>
    <view>

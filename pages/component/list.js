@@ -25,9 +25,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    to:function(){
+    to:function(r){
+      console.log(r.currentTarget.dataset.id)
       wx.navigateTo({
-        url: '../shopxq/shopxq',
+        url: '../shopxq/shopxq?id=' + r.currentTarget.dataset.id,
       })
     }
   }

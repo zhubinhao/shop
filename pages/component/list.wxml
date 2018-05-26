@@ -1,6 +1,6 @@
 <!--pages/component/list.wxml-->
-<view class='list' wx:for="{{innerData}}">
-<view class="inner" bindtap='to'>
+<view class='list' wx:for="{{innerData}}" wx:key="{{index}}">
+<view class="inner" bindtap='to' data-id='{{item.id}}'>
   <image src='{{innerUrl}}{{item.img}}'></image>
   <view class='content'>
     {{item.name}}

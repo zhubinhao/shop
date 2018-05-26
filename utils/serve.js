@@ -9,15 +9,15 @@ const lod=(mes,obj)=> {
 //                        post请求
 const post = (URL, obj,that,callback)=>{
   wx.request({
-    url: URL,
+    url: URLS+ URL,
     data: obj,
+    method: "POST",  
     header: {
       'content-type': 'application/json'
     },
     success: function (res) {
-      console.log(res.data)
       return callback(res.data)
-    },
+    }, 
     fail: function (res) {
       lod("请检查您的网络", that)            
       return callback()      

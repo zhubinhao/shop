@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    btns:{
+      1:['100以内','100-500','500-1000','1000-3000','3000以上'],
+      2:['从多到少','从少到多'],
+      3: ['从新到旧', '从旧到新','智能排序'],
+    },
+    dat:'',
+    i:'',
+    act:{1:-1,2:-1,3:-1},
+    istrue:false,
+    iaAct:''
   },
 
   /**
@@ -29,18 +38,35 @@ Page({
   
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
+  click:function(r){
+    let i = r.currentTarget.dataset.to;
+    if(this.data.i==i){ 
+      if (this.data.istrue==false){
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+      }else{
+        this.setData({
+          istrue: false
+        })
+        return;
+      }          
+    }
+    this.setData({
+      dat: this.data.btns[i],
+      iaAct: this.data.act[i],
+      i:i,
+      istrue: true   
+    })
+  },
+  shuai:function(r){
+    let i=this.data.i;
+    let num = r.currentTarget.dataset.num;
+    let act = this.data.act;
+    act[i] = num;
+    console.log(act)
+    this.setData({
+      act: act,
+      istrue: false
+    })
   },
 
   /**
@@ -56,11 +82,4 @@ Page({
   onReachBottom: function () {
   
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })
