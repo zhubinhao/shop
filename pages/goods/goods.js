@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    address: [{ 'name': '噗噗噗', 'phone': '18270842', 'cont': '广东省,深圳市,福田区,沙头街道,泰然九路云松大厦6D' }],
+    address: [],
     content: '',
     name: '',
     phone: '',
@@ -23,6 +23,8 @@ Page({
     shi: '',
     isfal: false,
     istrue: false,
+    title:'',
+    id:''
   },
 
   /**
@@ -30,6 +32,14 @@ Page({
    */
   onLoad: function (options) {
     citys.init(this)
+    let that=this;
+    server.get('/address/all',{},res=>{
+      console.log(res)
+      that.setData({
+        address:res
+      })
+      
+    })
   },
 
   /**
@@ -64,7 +74,11 @@ Page({
 
   },
   radioChange: function (e) {
-    console.log(e.detail.value)
+    let i = e.detail.value;
+    console.log(this.data.address[i].id)
+    server.post('/address/updateMain/' + this.data.address[i].id,{},this,res=>{
+   console.log(res)
+    })
   },
   goodchuli: function (e) {
     let num = e.target.dataset.num;
@@ -72,17 +86,18 @@ Page({
     let addressArr = [];
     let that = this;
     if (Type == 'B') {
-      console.log(this.data.address[num].cont.split(','))
-      console.log(this.data.address[num].cont)
-
+      console.log(this.data.address[num].detail.split(','))
+      console.log(this.data.address[num].detail)
       this.setData({
         istrue: true,
         name: this.data.address[num].name,
         phone: this.data.address[num].phone,
-        content: this.data.address[num].cont,
-        sheng: this.data.address[num].cont.split(',')[0],
-        shi: this.data.address[num].cont.split(',')[1],
-        xuan: this.data.address[num].cont.split(',')[2]
+        content: this.data.address[num].detail.split(',')[3],
+        sheng: this.data.address[num].detail.split(',')[0],
+        shi: this.data.address[num].detail.split(',')[1],
+        xuan: this.data.address[num].detail.split(',')[2],
+        title:'修改收货地址',
+        id: this.data.address[num].id
 
       })
 
@@ -90,7 +105,11 @@ Page({
 
     } else {
       server.showModal('', '删除改地址？', () => {
-        addressArr = that.data.address
+        addressArr = that.data.address;
+        console.log(addressArr[num].id)
+        server.post("/address/delete", [addressArr[num].id],this,res=>{
+          console.log(res)
+        })
         addressArr.splice(num, 1)
         that.setData({
           address: addressArr
@@ -101,8 +120,6 @@ Page({
 
   },
   choose: function () {
-
-
     this.setData({
       istrue: true,
       name: '',
@@ -110,7 +127,8 @@ Page({
       content: '',
       sheng: '',
       shi: '',
-      xuan: ''
+      xuan: '',
+      title:"添加收货地址"
 
     })
   },
@@ -136,6 +154,7 @@ Page({
       })
     }
   },
+  //新增
   submits: function () {
     console.log(this.data.name)
     console.log(this.data.phone)
@@ -143,7 +162,82 @@ Page({
     console.log(this.data.sheng)
     console.log(this.data.shi)
     console.log(this.data.xuan)
+    if (this.data.name.replace(/(^\s*)|(\s*$)/g, "")==""){
+       wx.showModal({
+         title: '',
+         content: '收件人不能为空',
+         showCancel: false,
+       })
+       return;
+    }
+    if (this.data.phone.replace(/(^\s*)|(\s*$)/g, "") == "") {
+      wx.showModal({
+        title: '',
+        content: '电话号码不能为空',
+        showCancel: false,
+      })
+      return;
+      
+    }
+    if (this.data.sheng.replace(/(^\s*)|(\s*$)/g, "") == "") {
+      wx.showModal({
+        title: '',
+        content: '请填写收货省份',
+        showCancel: false,
+      })
+      return;
+      
+    }
+    if (this.data.shi.replace(/(^\s*)|(\s*$)/g, "") == "") {
+      wx.showModal({
+        title: '',
+        content: '请填写收货城市',
+        showCancel:false,
+      })
+      return;
+      
+    }
+    if (this.data.xuan.replace(/(^\s*)|(\s*$)/g, "") == "") {
+      wx.showModal({
+        title: '',
+        content: '请填写收货地区',
+        showCancel: false,
+      })
+      return;
+      
+    }
+    if (this.data.content.replace(/(^\s*)|(\s*$)/g, "") == "") {
+      wx.showModal({
+        title: '',
+        content: '请填写收货详细地址',
+        showCancel: false,
+      })
+    }
 
+    let that = this;
+    let dat = this.data.sheng + "," + this.data.shi + "," + this.data.xuan + "," +this.data.content
+    console.log(dat)
+    var obj={
+      phone: this.data.phone,
+      name: this.data.name,
+      detail: dat,
+      area: this.data.sheng,
+      note: this.data.sheng,
+    }
+    that.xx()
+    if (this.data.title =='添加收货地址'){
+      server.post('/address/add', obj, this, res => {
+        console.log(res)
+        that.onLoad()
+      })
+    }else{
+      obj.id = this.data.id
+      server.post('/address/update', obj, this, res => {
+        console.log(res)
+        that.onLoad()
+      })
+    }
+    
 
   },
   a: function (e) {
@@ -194,10 +288,5 @@ Page({
       isfal: false
     })
   },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
-  }
 })

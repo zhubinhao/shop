@@ -1,6 +1,10 @@
 {
   "pages":[
+    "pages/goods/goods",
+    
     "pages/index/index",
+    "pages/cart/cart",
+    "pages/cart1/cart1",
     
     "pages/classifyXq/classifyXq",
     "pages/classify/classify",
@@ -8,10 +12,8 @@
     "pages/arter/arter",
     "pages/feed/feed",
     "pages/shopxq/shopxq",
-    "pages/goods/goods",
     "pages/help/help",
     "pages/logs/logs",
-    "pages/cart/cart",
     "pages/dingdan/dingdan"
   ],
   "window":{

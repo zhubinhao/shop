@@ -14,8 +14,20 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if (res.code) {
           //发起网络请求
-          serve.post('/user/wxlogin', res.code,this,res=>{
-            console.log(res)
+
+          wx.request({
+            url: serve.URLS + '/user/wxlogin',
+            data: res.code,
+            method: "POST",
+            header: {
+              'content-type': 'application/json'
+            },
+            success: function (res) {
+              wx.setStorageSync("cookies", res.header["Set-Cookie"])
+            },
+            fail: function (res) {
+              
+            },
           })
        
         } else {

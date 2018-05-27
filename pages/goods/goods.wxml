@@ -6,13 +6,13 @@
           <text>{{item.phone}}</text>
        </view>
        <view>
-           <text>{{item.cont}}</text>
+           <text>{{item.detail}}</text>
        </view>
        <view>
            <view>
               
               <label class="radio">
-                <radio value="{{index}}" checked="" color='red'/>设为默认地址
+                <radio value="{{index}}" checked="{{item.main=='1'}}" color='red' />设为默认地址
               </label>
            </view>
            <view class='good-btn'>
@@ -39,7 +39,7 @@
   <view class='address-box'>
      <text class='address-text' bindtap='xx'>X</text>
       <view class='a-title'>
-         <text>添加收货地址</text>
+         <text>{{title}}</text>
       </view>
       <view class='a-inp a-fist'>
          <view>

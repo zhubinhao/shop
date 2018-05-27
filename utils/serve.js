@@ -13,7 +13,8 @@ const post = (URL, obj,that,callback)=>{
     data: obj,
     method: "POST",  
     header: {
-      'content-type': 'application/json'
+      'content-type': 'application/json',
+      'cookie': wx.getStorageSync("cookies")
     },
     success: function (res) {
       return callback(res.data)
@@ -25,11 +26,17 @@ const post = (URL, obj,that,callback)=>{
   })
 }
 const get=(url,data,call)=>{
+ 
   wx.request({
     url: URLS+url,
     data: data,
     method: 'GET',
+    header: {
+      'content-type': 'application/json',
+      'cookie': wx.getStorageSync("cookies")
+    },
     success: function (res) {
+      
      return call(res.data.result)
     },
     fail: function () {

@@ -48,7 +48,7 @@ Page({
   },
   gou:function(){
     console.log(this.data.list)
-    serve.post("/car/add", { gid: this.data.list.id, count:1},this,res=>{
+    serve.post("/car/add", { gid: this.data.list.id, count: 1, select:true},this,res=>{
       console.log(res)
       wx.showToast({
         title: '已加入购物车',

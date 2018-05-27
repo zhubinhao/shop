@@ -1,1 +1,98 @@
-/* pages/cart/cart.wxss */
+.cart_list{
+  width: 100%;
+  overflow-x: hidden;
+}
+.pay_box{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  background-color: white;
+  border-top: 1px solid lightgray;
+  width: 100%;
+  align-items: center;
+  }
+  .product_total_price{
+    display: flex;
+    align-items: center;
+  }
+  .pay_btn{
+    width: 100px;
+    background-color: red;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+  }
+  checkbox .wx-checkbox-input{
+    margin-left: 10px;
+    border-radius: 50%;/* 圆角 */
+    width: 40rpx; /* 背景的宽 */
+    height: 40rpx; /* 背景的高 */
+  }
+  image{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+  }
+  .cart_item{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    border-bottom: 1px solid lightgray;
+    align-items: center;
+    background-color: white;
+  }
+  .product_title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+    
+    
+  }
+  .price{
+    margin-left: 10px ;
+    color: red;
+  }
+  .cart_item_left{
+    display: flex;
+    align-items: center;
+  }
+  .cart_item_left image{
+    margin-right: 10px;
+  }
+  .num_box{
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .num_box view{
+    border: 1px solid gainsboro;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+  .num_box view:first-child{
+    border-right: none;
+  }
+   .num_box view:last-child{
+    border-left: none;
+    margin-right: 10px;
+  }
+  .dele{
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    right: -100px;
+    background-color: red;
+    color: white;
+    line-height: 80px;
+    text-align: center;
+  }

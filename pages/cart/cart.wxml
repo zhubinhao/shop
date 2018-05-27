@@ -1,1 +1,30 @@
-<text>pages/cart/cart.wxml</text>
+ <view class="cart_list" wx:for="{{list}}" wx:key="{{index}}">
+   <view class='cart_item' style="{{item.txtStyle}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}">
+      <view class='cart_item_left'>
+        <checkbox value="" checked="{{item.select}}" bindtap='check'data-i='{{index}}'/>
+        <image src='{{URLS}}{{item.good.img}}' ></image>
+        <view class='title_count' bindtap='to' data-gid='{{item.gid}}'>
+          <view class='product_title'>{{item.good.name}}</view>
+          <view class='product_price'>￥{{item.good.price}}</view>
+        </view>
+      </view>
+      <view class='cart_item_right'>
+         <view class='num_box'>
+            <view class='num_jian_box' bindtap='subtract' data-i='{{index}}'>-</view>
+            <view class='num_current_box'>{{item.count}}</view>
+            <view class='num_add_box' bindtap='add' data-i='{{index}}'>+</view>
+         </view>
+      </view>
+      <view class='dele' catchtap='dele' data-index="{{index}}">
+         删除
+      </view>
+   </view>
+</view> 
+
+<view class='pay_box'>
+  <view class='product_total_price'>
+      <checkbox value="{{checked}}" checked="{{checked}}"  bindtap="allcheck"/>全选
+      <view class='price'>￥{{pice}}</view> 
+  </view>
+  <view class='pay_btn'>立即结算</view>
+</view>

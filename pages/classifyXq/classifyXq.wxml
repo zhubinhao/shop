@@ -9,3 +9,7 @@
     {{item}}
   </view>
 </view>
+
+<view style='text-align: center'>
+暂无数据
+</view>
